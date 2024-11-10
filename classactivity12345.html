@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(../images/future-ninja_1575662971-2048x1152.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+
+        }
+        #maindiv{
+            
+            background-color: rgba(247, 236, 162, 0.762);
+            width: 50%;
+            min-width: 250px;
+            border-radius: 15px;
+            border: solid;
+
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            text-align: left;
+            padding: 30px;
+        }
+        label{
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"], select{
+            width: 100%;
+            height: 40px;
+            margin: 2px;
+            border: none;
+        }
+        textarea{
+            width: 100%;
+        }
+        input[type="submit"],input[type="reset"]{
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            text-transform: uppercase;
+            transition: all 0.5s ease-in-out 0s ;
+
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(0, 255, 21);
+            color: black;
+            transform: scale(1.06);
+            cursor: pointer;
+        }
+        input[type="reset"]:hover{
+            background-color: rgb(0, 255, 21);
+            color: black;
+            transform: scale(1.06);
+            cursor: pointer;
+        }
+        .error{
+            color: red;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+    <center>
+    <div id="maindiv" >
+        <form onsubmit="return(sub())" name="myform">
+            <h1>Sign Up!</h1>
+           
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Full Nmae">
+            <span class="error" id="name error" ></span>
+            
+            <br><br>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email">
+            <span class="error" id="emailerror" ></span>
+            
+            <br><br>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password">
+            <span class="error" id="passworderror" ></span>
+            
+            <br><br>
+
+            <label for="cities">Cities</label>
+            <select name="cities" id="cities">
+                <option value="Select">Select</option>
+                <option value="noidA">Noida</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mohali">Mohali</option>
+            </select>
+            <span class="error" id="selecterror"></span>
+            <br><br>
+
+            <label for="address">Address</label>
+            <textarea name="address" id="address" cols="20" rows="5"></textarea> 
+            <span class="error" id="textareaerror"></span>
+            <br><br>
+
+            <label for="gender">Gender</label>
+            <input type="radio" value="male" >male
+            <input type="radio" value="female" >female
+            <span class="error" id="gendererror"></span>
+            <br><br>
+            
+            <label for="upload">Upload:</label>
+            <input type="file"> 
+            <span class="error" id="uploaderror"></span>
+            <br><br>
+            <input type="submit" value="Submit Form"> 
+            <input type="reset" value="RESET">
+            
+        </form>
+    </div>
+</center>
+<script>
+    function sub(){
+        var isvalid = true;
+        if(document.getElementById("name").value==""){
+            document.getElementById("nameerror").innerText = "can't be empty"
+            isvalid = false;
+        }
+        else{
+            document.getElementById("nameerror").innerText = "";
+
+        }
+        if(document.getElementById("email").value==""){
+            document.getElementById("emailerror").innerText = "can't be empty"
+            isvalid = false;
+        }
+        else{
+            document.getElementById("emailerror").innerText = "";
+
+        }
+        
+        if(document.getElementById("cities").value=="select"){
+            document.getElementById("selecterror").innerText = "can't be empty"
+            isvalid = false;
+        }
+        else{
+            document.getElementById("selecterror").innerText = "";
+
+        }
+       
+        if(document.getElementById("address").value==""){
+            document.getElementById("textareaerroe").innerText = "can't be empty"
+            isvalid = false;
+        }
+        else{
+            document.getElementById("textareaerror").innerText = "";
+
+        }
+
+        if(document.myform.gender.value==""){
+            document.getElementById("gendererror").innerText = "can't be empty"
+            isvalid = false;
+        }
+        else{
+            document.getElementById("gendererroe").innerText = "";
+
+        }
+
+        if(document.getElementById("password").value==""){
+            document.getElementById("passworderror").innerText = "can't be empty"
+            isvalid = false;
+        }
+        else{
+            document.getElementById("passworderror").innerText = "";
+
+        }
+
+        if(document.getElementById("upload").value==""){
+            document.getElementById("uploaderror").innerText = "can't be empty"
+            isvalid = false;
+        }
+        else{
+            document.getElementById("uploadderror").innerText = "";
+
+        }
+
+        return isvalid;
+    }
+    
+</script>
+</body>
+</html>
